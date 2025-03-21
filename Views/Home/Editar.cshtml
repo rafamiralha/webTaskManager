@@ -1,0 +1,17 @@
+@model webTaskManager.Models.Task
+
+<h2>Editar Tarefa</h2>
+
+<form asp-action="Edit" asp-controller="Task" method="post">
+    <input type="hidden" asp-for="Id" />
+    <label for="title">Título da Tarefa</label>
+    <input type="text" id="title" name="Title_Task" required />
+
+    <label for="description">Descrição da Tarefa</label>
+    <input type="text" id="description" name="Description_Task" required />
+
+    <button type="submit">Adicionar</button>
+
+</form>
+
+<a asp-action="Index">Voltar para a Lista</a>

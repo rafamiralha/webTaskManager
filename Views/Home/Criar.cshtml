@@ -1,0 +1,13 @@
+@model webTaskManager.Models.Task
+
+<h2>Adicionar Nova Tarefa</h2>
+
+<form asp-action="Create" asp-controller="Task" method="post">
+    <label for="title">Título da Tarefa</label>
+    <input type="text" id="title" name="Title_Task" required />
+
+    <label for="description">Descrição da Tarefa</label>
+    <input type="text" id="description" name="Description_Task" required />
+
+    <button type="submit">Adicionar</button>
+</form>

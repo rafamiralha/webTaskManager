@@ -1,6 +1,25 @@
-@{
-    ViewData["Title"] = "Minha Página Web";
-}
+@model List<webTaskManager.Models.Task>
 
-<h1>Bem-vindo ao meu CRUD!</h1>
-<p>Esta é uma página web simples dentro do seu projeto C#.</p>
+<h1>Lista de Tarefas</h1>
+
+<table border="1">
+    <tr>
+        <th>Titulo</th>
+        <th>descrição</th>
+        <th>Ações</th>
+    </tr>
+    @foreach (var task in Model)
+    {
+        <tr>
+            <td>@task.title_task
+            <td>@task.description_task</td>
+            <td>
+                <a href="/Home/Editar/@task.Id">✏️ Editar</a> |
+                <a href="/Home/Excluir/@task.Id">🗑 Excluir</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Home/Criar">➕ Criar Nova Tarefa</a>
+
